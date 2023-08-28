@@ -273,7 +273,7 @@ impl JobState {
 
 impl JobSummary {
     pub fn estimated_duration(&self) -> Duration {
-        const BASE: Duration = Duration::from_secs(10);
+        const BASE: Duration = Duration::from_secs(30);
         const MAX_LATENCY: Duration = Duration::from_secs(10);
 
         let (JobSummary::Tx(n) | JobSummary::Merge(n)) = self;
