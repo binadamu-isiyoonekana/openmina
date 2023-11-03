@@ -5218,7 +5218,7 @@ mod tests {
         mut bytes: &[u8],
     ) -> (
         v2::MinaStateSnarkedLedgerStateStableV2,
-        (v2::LedgerProofProdStableV2, v2::LedgerProofProdStableV2),
+        [v2::LedgerProofProdStableV2; 2],
         SokMessage,
     ) {
         use mina_p2p_messages::v2::*;
@@ -5246,7 +5246,7 @@ mod tests {
 
         let message = SokMessage { fee, prover };
 
-        (statement, (p1, p2), message)
+        (statement, [p1, p2], message)
     }
 
     fn read_gates() -> (
